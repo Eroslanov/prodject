@@ -9,7 +9,7 @@ class SMSNotification extends AbstractNotification implements Notification
     public function send($message): void
     {
         if (strlen($message) > 160) {
-            $this->status = "failed: Message too long";
+            $this->status = "ошибка: сообщение слишком длинное";
             return;
         }
 
@@ -18,7 +18,7 @@ class SMSNotification extends AbstractNotification implements Notification
             $this->status = "success";
             $this->timestamp = date('Y-m-d H:i:s');
         } catch (\Exception $e) {
-            $this->status = "failed: " . $e->getMessage();
+            $this->status = "ошибка: " . $e->getMessage();
         }
     }
 
