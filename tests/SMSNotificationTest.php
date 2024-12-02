@@ -17,7 +17,7 @@ class SMSNotificationTest extends TestCase
         $notification = new SMSNotification();
         $longMessage = str_repeat("a", 161);
         $notification->send($longMessage);
-        $this->assertEquals("failed: Message too long", $notification->getStatus());
+        $this->assertEquals("ошибка: сообщение слишком длинное", $notification->getStatus());
     }
 
     public function testGetType()
