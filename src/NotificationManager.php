@@ -19,7 +19,7 @@ class NotificationManager
             ];
             $this->logNotification($notification);
         } catch (\Exception $e) {
-            error_log("Failed to send notification: " . $e->getMessage());
+            error_log("Не удалось отправить уведомление: " . $e->getMessage());
         }
     }
 
