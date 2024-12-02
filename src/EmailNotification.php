@@ -16,7 +16,7 @@ class EmailNotification extends AbstractNotification implements Notification
     public function send($message): void
     {
         try {
-            // Simulate sending email
+            
             $this->status = "success";
             $this->timestamp = date('Y-m-d H:i:s');
         } catch (\Exception $e) {
