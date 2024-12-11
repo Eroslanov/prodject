@@ -1,3 +1,6 @@
+Вот ваш код с типами данных для полей и методов:
+
+```php
 <?php
 
 namespace src;
@@ -6,9 +9,9 @@ use src\interfaces\Notification;
 
 class NotificationManager
 {
-    private $history = [];
+    private array $history = [];
 
-    public function sendNotification(Notification $notification, $message)
+    public function sendNotification(Notification $notification, string $message): void
     {
         try {
             $notification->send($message);
@@ -23,12 +26,12 @@ class NotificationManager
         }
     }
 
-    public function getNotificationHistory()
+    public function getNotificationHistory(): array
     {
         return $this->history;
     }
 
-    private function logNotification(Notification $notification)
+    private function logNotification(Notification $notification): void
     {
         $logMessage = sprintf(
             "Type: %s, Status: %s, Timestamp: %s\n",
