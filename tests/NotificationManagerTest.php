@@ -7,7 +7,7 @@ use src\NotificationManager;
 
 class NotificationManagerTest extends TestCase
 {
-    public function testSendNotification()
+    public function testSendNotification(): void
     {
         $manager = new NotificationManager();
         $emailNotification = new EmailNotification("Test Subject");
@@ -18,7 +18,7 @@ class NotificationManagerTest extends TestCase
         $this->assertEquals("success", $history[0]['status']);
     }
 
-    public function testGetNotificationHistory()
+    public function testGetNotificationHistory(): void
     {
         $manager = new NotificationManager();
         $emailNotification = new EmailNotification("Test Subject");
